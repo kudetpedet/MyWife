@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Istri Tercinta</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #ffe6f2;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header {
+            background: #ff66b3;
+            padding: 20px;
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .love-letter {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255,102,179,0.3);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .hearts {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            color: #ff66b3;
+            animation: float 3s infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        #music-player {
+            margin: 20px;
+            padding: 10px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .photo-frame {
+            border: 5px solid #ff66b3;
+            border-radius: 15px;
+            margin: 20px;
+            overflow: hidden;
+            max-width: 300px;
+            display: inline-block;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts" id="hearts-container"></div>
+
+    <div class="container">
+        <div class="header">
+            <h1>💖 Untuk Istriku Tercinta 💖</h1>
+            <p>Selamat Menikmati Surat Cinta Ini</p>
+        </div>
+
+        <!-- Ganti foto.jpg dengan nama file foto Anda -->
+        <div class="photo-frame">
+            <img src="IMG_20250204_180732.jpg" alt="Foto Kita">
+        </div>
+
+        <div class="love-letter">
+            <h2>💌 Surat Cinta Khusus Untukmu 💌 </h2>
+            <p>Hai sayangku...</p>
+            <p>Istriku tercinta, kamu adalah matahari dalam kehidupanku yang memberikan cahaya dan kehangatan setiap hariku</p>
+            <p>Dalam setiap detik, aku bersyukur memiliki kamu sebagai pendamping hidupku, yang selalu memberikan kebahagiaan dan kekuatan bagiku</p>
+            <p>Tak ada kata yang mampu mengungkapkan betapa bersyukurnya aku memiliki kamu, istriku tercinta</p>
+            <p>Maafkan aku yang belum bisa membuatmu bahagia</p>
+            <p>💐 Aku akan selalu mencintaimu 💐</p>
+        </div>
+
+        <!-- Audio Player -->
+        <div id="music-player">
+            <!-- Ganti love-song.mp3 dengan file musik Anda -->
+            <audio controls autoplay loop>
+                <source src="AudioCutter_Denny Caknan - Cundamani (Official Music Video).mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+
+    <script>
+        // Animasi hati jatuh
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts-container');
+            for (let i = 0; i < 50; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '❤';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 3 + 's';
+                heartsContainer.appendChild(heart);
+            }
+        }
+
+        // Pesan khusus saat diklik
+        document.body.addEventListener('click', function() {
+            alert("Anu sayang, Love U 😘");
+        });
+
+        // Jalankan animasi saat halaman dimuat
+        window.onload = function() {
+            createHearts();
+        }
+    </script>
+</body>
+</html>
